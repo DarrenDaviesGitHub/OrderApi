@@ -6,6 +6,4 @@ public interface ICosmosOrderRepository
 {
     public Task CreateOrderAsync(Order order, CancellationToken cancellationToken);
     public Task<Order?> GetOrderAsync(Guid orderId, Guid customerId, CancellationToken cancellationToken);
-    // Update
-    // Delete
 }

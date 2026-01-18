@@ -1,6 +1,5 @@
 ﻿using Ardent.Domain.Models;
 using Ardent.Infrastructure.Cosmos.Documents;
-using System.Data.Common;
 
 namespace Ardent.Infrastructure.Cosmos.Mappings;
 

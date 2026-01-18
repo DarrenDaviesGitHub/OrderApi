@@ -5,7 +5,6 @@ using Ardent.Infrastructure.Cosmos.Interfaces;
 using Ardent.Infrastructure.Cosmos.Mappings;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
-using System.Text.Json;
 
 namespace Ardent.Infrastructure.Cosmos.Repository;
 
