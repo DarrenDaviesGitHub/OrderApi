@@ -1,0 +1,28 @@
+@Ardent.OrderApi_HostAddress = https://localhost:7213/api
+
+### Get Order
+GET {{Ardent.OrderApi_HostAddress}}/order/customer/4f7a3c9b-2e5d-4b91-a8ef-9b6a7c2d3e44/order/b2f8a3d4-6c9f-4a9a-9b0e-0c8d7b1a9e11
+Accept: application/json
+
+### Create a new Order
+POST {{Ardent.OrderApi_HostAddress}}/order
+Content-Type: application/json
+{
+  "customerId": "4f7a3c9b-2e5d-4b91-a8ef-9b6a7c2d3e44",
+  "products": [
+    {
+      "name": "Darren Product",
+      "description": "DD Test 250",
+      "price": 250
+    },
+    {
+      "name": "Second Product",
+      "description": "Another Test 500",
+      "price": 500
+    }
+  ]
+}
+
+### Healthcheck
+GET {{Ardent.OrderApi_HostAddress}}/health
+Accept: application/json
