@@ -1,10 +1,10 @@
-## Order API Overview
+# Order API Overview
 
 Implement a basic CRUD API that integrates with Azure CosmosDB.
 
+## Example order (Azure Cosmos DB document):
 
-Example order (Azure Cosmos DB document):
-
+```
 {
   "id": "b2f8a3d4-6c9f-4a9a-9b0e-0c8d7b1a9e11",
   "customerId": "4f7a3c9b-2e5d-4b91-a8ef-9b6a7c2d3e44",
@@ -25,6 +25,6 @@ Example order (Azure Cosmos DB document):
   "totalAmount": 150.00,
   "orderDate": "2026-01-11T10:30:00Z"
 }
-
+```
 
 ![CosmosDBIntegration](CosmosDBRunning.png)
