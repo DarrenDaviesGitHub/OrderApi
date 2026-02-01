@@ -1,7 +1,7 @@
 @Ardent.OrderApi_HostAddress = https://localhost:7213/api
 
 ### Get Order
-GET {{Ardent.OrderApi_HostAddress}}/order/customer/4f7a3c9b-2e5d-4b91-a8ef-9b6a7c2d3e44/order/b2f8a3d4-6c9f-4a9a-9b0e-0c8d7b1a9e11
+GET {{Ardent.OrderApi_HostAddress}}/order/b2f8a3d4-6c9f-4a9a-9b0e-0c8d7b1a9e11/customer/4f7a3c9b-2e5d-4b91-a8ef-9b6a7c2d3e44/
 Accept: application/json
 
 ### Create a new Order

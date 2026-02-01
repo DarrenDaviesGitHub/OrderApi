@@ -2,14 +2,23 @@ using Ardent.Infrastructure.Cosmos.Configuration;
 using Ardent.Infrastructure.Cosmos.Interfaces;
 using Ardent.Infrastructure.Cosmos.Repository;
 using Ardent.OrderApi.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+var keycloakConfiguration = builder.Configuration.GetSection("Keycloak");
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = keycloakConfiguration["Authority"];
+        options.Audience = keycloakConfiguration["Audience"];
+        options.RequireHttpsMetadata = bool.Parse(keycloakConfiguration["RequireHttpsMetadata"] ?? "false");
+    });
 builder.Services.Configure<CosmosDbOptions>(builder.Configuration.GetSection("CosmosDb"));
 builder.Services.AddSingleton(sp =>
 {

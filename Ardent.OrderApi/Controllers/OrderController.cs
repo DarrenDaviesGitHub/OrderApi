@@ -3,15 +3,17 @@ using Ardent.OrderApi.Commands;
 using Ardent.OrderApi.DomainTransferObjects;
 using Ardent.OrderApi.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ardent.OrderApi.Controllers;
 
 [Route("api/[controller]")]
+[Authorize]
 [ApiController]
 public class OrderController(IMediator mediator) : ControllerBase
 {
-    [HttpGet("customer/{customerId}/order/{orderId}")]
+    [HttpGet("{orderId}/customer/{customerId}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
