@@ -2,6 +2,9 @@
 
 Implement a basic CRUD API that integrates with Azure CosmosDB.
 
+## Example API endpoint (HTTP GET):
+https://ardentwebapiorders-fwhbcedxc2fnfhaj.eastus-01.azurewebsites.net/api/order/b2f8a3d4-6c9f-4a9a-9b0e-0c8d7b1a9e11/customer/4f7a3c9b-2e5d-4b91-a8ef-9b6a7c2d3e44
+
 ## Example order (Azure Cosmos DB document):
 
 ```
