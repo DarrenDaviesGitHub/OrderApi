@@ -1,12 +1,10 @@
-﻿using Ardent.Domain.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Ardent.Infrastructure.Cosmos.Documents;
 
 public class OrderDocument
 {
     [JsonProperty(PropertyName="id")]
-
     public Guid Id { get; set; }
 
     [JsonProperty(PropertyName = "customerId")]
