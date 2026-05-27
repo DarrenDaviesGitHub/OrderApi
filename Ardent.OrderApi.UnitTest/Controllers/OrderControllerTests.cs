@@ -47,7 +47,7 @@ public class OrderControllerTests
         _mediatorMock.Setup(m => m.Send(getOrderQuery, cancellationToken)).ReturnsAsync(expectedOrder);
 
         // Act
-        var result = await _controller.Get(orderId, customerId);
+        var result = await _controller.Get(orderId, customerId, cancellationToken);
 
         // Assert
         result.Result.Should().NotBeNull();
@@ -80,7 +80,7 @@ public class OrderControllerTests
                      .ReturnsAsync((Order?)null);
 
         // Act
-        var result = await _controller.Get(orderId, customerId);
+        var result = await _controller.Get(orderId, customerId, cancellationToken);
 
         // Assert
         result.Result.Should().BeOfType<NotFoundResult>();
@@ -102,7 +102,7 @@ public class OrderControllerTests
         _mediatorMock.Setup(m => m.Send(createOrderCommand, cancellationToken)).Returns(Task.CompletedTask);
 
         // Act
-        var result = await _controller.Post(orderDto);
+        var result = await _controller.Post(orderDto, cancellationToken);
 
         // Assert
         result.Should().BeOfType<StatusCodeResult>();
@@ -125,7 +125,7 @@ public class OrderControllerTests
                      .ThrowsAsync(new Exception("Server Side Error"));
 
         // Act
-        var result = async () => await _controller.Post(orderDto);
+        var result = async () => await _controller.Post(orderDto, cancellationToken);
 
         // Assert
         await result.Should().ThrowAsync<Exception>();

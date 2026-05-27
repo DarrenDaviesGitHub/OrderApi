@@ -17,18 +17,23 @@ public class OrderController(IMediator mediator) : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<Order>> Get(Guid orderId, Guid customerId)
+    public async Task<ActionResult<Order>> Get(
+        Guid orderId, 
+        Guid customerId,
+        CancellationToken cancellationToken)
     {
-        var result = await mediator.Send(new GetOrderQuery(orderId, customerId));
+        var result = await mediator.Send(new GetOrderQuery(orderId, customerId), cancellationToken);
         return result is not null ? Ok(result) : NotFound();
     }
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> Post([FromBody] CreateOrderDto order)
+    public async Task<IActionResult> Post(
+        [FromBody] CreateOrderDto order,
+        CancellationToken cancellationToken)
     {
-        await mediator.Send(new CreateOrderCommand(order));
+        await mediator.Send(new CreateOrderCommand(order), cancellationToken);
         return StatusCode(StatusCodes.Status201Created);
     }
 }
