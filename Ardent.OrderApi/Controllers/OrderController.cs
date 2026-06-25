@@ -22,7 +22,7 @@ public class OrderController(IMediator mediator) : ControllerBase
         Guid customerId,
         CancellationToken cancellationToken)
     {
-        var result = await mediator.Send(new GetOrderQuery(orderId, customerId), cancellationToken);
+        Order result = await mediator.Send(new GetOrderQuery(orderId, customerId), cancellationToken);
         return result is not null ? Ok(result) : NotFound();
     }
 
