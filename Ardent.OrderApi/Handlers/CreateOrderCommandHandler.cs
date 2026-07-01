@@ -5,9 +5,13 @@ using MediatR;
 
 namespace Ardent.OrderApi.Handlers;
 
-public class CreateOrderCommandHandler(ICosmosOrderRepository cosmosOrderRepository) : IRequestHandler<CreateOrderCommand>
+public class CreateOrderCommandHandler(
+    ICosmosOrderRepository cosmosOrderRepository) 
+    : IRequestHandler<CreateOrderCommand>
 {
-    public async Task Handle(CreateOrderCommand command, CancellationToken cancellationToken)
+    public async Task Handle(
+        CreateOrderCommand command,
+        CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(command);
 

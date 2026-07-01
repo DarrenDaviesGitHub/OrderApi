@@ -1,13 +1,17 @@
-﻿using Ardent.Domain.Models;
-using Ardent.Infrastructure.Cosmos.Interfaces;
+﻿using Ardent.Infrastructure.Cosmos.Interfaces;
+using Ardent.OrderApi.DomainTransferObjects;
 using Ardent.OrderApi.Queries;
+using AutoMapper;
 using MediatR;
 
 namespace Ardent.OrderApi.Handlers;
 
-public class GetOrderQueryHandler(ICosmosOrderRepository orderRepository) : IRequestHandler<GetOrderQuery, Order?>
+public class GetOrderQueryHandler(
+    IMapper mapper,
+    ICosmosOrderRepository orderRepository) 
+    : IRequestHandler<GetOrderQuery, OrderDto?>
 {
-    public async Task<Order?> Handle(
+    public async Task<OrderDto?> Handle(
         GetOrderQuery request, 
         CancellationToken cancellationToken)
     {
@@ -15,6 +19,10 @@ public class GetOrderQueryHandler(ICosmosOrderRepository orderRepository) : IReq
 
         Console.WriteLine($"Handling GetOrdersQuery for OrderId: {request.OrderId} and CustomerId: {request.CustomerId}");
         
-        return await orderRepository.GetOrderAsync(request.OrderId, request.CustomerId, cancellationToken);
+        var order = await orderRepository.GetOrderAsync(request.OrderId, request.CustomerId, cancellationToken);
+
+        return order is not null 
+            ? mapper.Map<OrderDto>(order) 
+            : null;
     }
-}
+}   

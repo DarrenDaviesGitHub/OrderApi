@@ -1,9 +1,13 @@
 ﻿using Ardent.Domain.Models;
 using Ardent.Infrastructure.Cosmos.Interfaces;
+using Ardent.OrderApi.DomainTransferObjects;
 using Ardent.OrderApi.Handlers;
+using Ardent.OrderApi.MappingProfiles;
 using Ardent.OrderApi.Queries;
 using AutoFixture;
+using AutoMapper;
 using FluentAssertions;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 namespace Ardent.OrderApi.UnitTest.Handlers;
@@ -13,11 +17,19 @@ public class GetOrderQueryHandlerTests
     private readonly Mock<ICosmosOrderRepository> _orderRepositoryMock;
     private readonly GetOrderQueryHandler _handler;
     private readonly Fixture _fixture;
+    private readonly IMapper _mapper;
 
     public GetOrderQueryHandlerTests()
     {
+        var config = new MapperConfiguration(cfg =>
+        {
+            cfg.AddProfile<OrderProfile>();
+            cfg.AddProfile<ProductProfile>();
+        }, LoggerFactory.Create(cfg => { }));
+
+        _mapper = config.CreateMapper();
         _orderRepositoryMock = new Mock<ICosmosOrderRepository>();
-        _handler = new GetOrderQueryHandler(_orderRepositoryMock.Object);
+        _handler = new GetOrderQueryHandler(_mapper, _orderRepositoryMock.Object);
         _fixture = new Fixture();
     }
 
@@ -34,6 +46,8 @@ public class GetOrderQueryHandlerTests
                                       .With(o => o.CustomerId, customerId)
                                       .Create();
 
+        OrderDto expectedOrderDto = _mapper.Map<OrderDto>(expectedOrder);
+
         GetOrderQuery request = new(orderId, customerId);
 
         _orderRepositoryMock
@@ -45,7 +59,7 @@ public class GetOrderQueryHandlerTests
 
         // Assert
         result.Should().NotBeNull();
-        result.Should().BeEquivalentTo(expectedOrder);
+        result.Should().BeEquivalentTo(expectedOrderDto);
 
         _orderRepositoryMock.Verify(r => r.GetOrderAsync(orderId, customerId, cancellationToken), Times.Once);
     }

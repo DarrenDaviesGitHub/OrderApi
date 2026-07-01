@@ -1,5 +1,4 @@
-﻿using Ardent.Domain.Models;
-using Ardent.OrderApi.Commands;
+﻿using Ardent.OrderApi.Commands;
 using Ardent.OrderApi.Controllers;
 using Ardent.OrderApi.DomainTransferObjects;
 using Ardent.OrderApi.Queries;
@@ -33,10 +32,10 @@ public class OrderControllerTests
         Guid customerId = _fixture.Create<Guid>();
         CancellationToken cancellationToken = CancellationToken.None;
 
-        Order expectedOrder = _fixture.Build<Order>()
+        OrderDto expectedOrder = _fixture.Build<OrderDto>()
                                       .With(o => o.Id, orderId)
                                       .With(o => o.CustomerId, customerId)
-                                      .With(o => o.Products, [.. _fixture.CreateMany<Product>(2)])
+                                      .With(o => o.Products, [.. _fixture.CreateMany<ProductDto>(2)])
                                       .Create();
 
         GetOrderQuery getOrderQuery = _fixture.Build<GetOrderQuery>()
@@ -53,7 +52,7 @@ public class OrderControllerTests
         result.Result.Should().NotBeNull();
         result.Result.Should().BeOfType<OkObjectResult>();
 
-        var orderResult = (result.Result as OkObjectResult)!.Value as Order;
+        var orderResult = (result.Result as OkObjectResult)!.Value as OrderDto;
 
         orderResult.Should().NotBeNull();
         orderResult.Should().BeEquivalentTo(expectedOrder);
@@ -76,8 +75,8 @@ public class OrderControllerTests
                                               .With(q => q.CustomerId, customerId)
                                               .Create();
 
-        _mediatorMock.Setup(m => m.Send<Order?>(getOrderQuery, cancellationToken))
-                     .ReturnsAsync((Order?)null);
+        _mediatorMock.Setup(m => m.Send<OrderDto?>(getOrderQuery, cancellationToken))
+                     .ReturnsAsync((OrderDto?)null);
 
         // Act
         var result = await _controller.Get(orderId, customerId, cancellationToken);

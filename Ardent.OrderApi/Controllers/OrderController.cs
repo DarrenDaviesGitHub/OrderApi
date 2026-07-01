@@ -1,5 +1,4 @@
-﻿using Ardent.Domain.Models;
-using Ardent.OrderApi.Commands;
+﻿using Ardent.OrderApi.Commands;
 using Ardent.OrderApi.DomainTransferObjects;
 using Ardent.OrderApi.Queries;
 using MediatR;
@@ -17,12 +16,12 @@ public class OrderController(IMediator mediator) : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<Order>> Get(
+    public async Task<ActionResult<OrderDto>> Get(
         Guid orderId, 
         Guid customerId,
         CancellationToken cancellationToken)
     {
-        Order result = await mediator.Send(new GetOrderQuery(orderId, customerId), cancellationToken);
+        OrderDto result = await mediator.Send(new GetOrderQuery(orderId, customerId), cancellationToken);
         return result is not null ? Ok(result) : NotFound();
     }
 
