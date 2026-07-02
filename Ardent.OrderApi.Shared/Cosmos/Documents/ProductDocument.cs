@@ -1,4 +1,4 @@
-﻿namespace Ardent.Infrastructure.Cosmos.Documents;
+﻿namespace Ardent.OrderApi.Shared.Cosmos.Documents;
 
 public class ProductDocument
 {

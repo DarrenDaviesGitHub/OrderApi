@@ -1,6 +1,6 @@
 ﻿using Ardent.Domain.Models;
-using Ardent.Infrastructure.Cosmos.Documents;
 using Ardent.Infrastructure.Cosmos.Mappings;
+using Ardent.OrderApi.Shared.Cosmos.Documents;
 using AutoFixture;
 using FluentAssertions;
 

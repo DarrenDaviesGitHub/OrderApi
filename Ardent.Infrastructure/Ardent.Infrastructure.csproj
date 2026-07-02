@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ardent.Domain\Ardent.Domain.csproj" />
+    <ProjectReference Include="..\Ardent.OrderApi.Shared\Ardent.OrderApi.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using Ardent.Domain.Models;
-using Ardent.Infrastructure.Cosmos.Documents;
+using Ardent.OrderApi.Shared.Cosmos.Documents;
 
 namespace Ardent.Infrastructure.Cosmos.Mappings;
 

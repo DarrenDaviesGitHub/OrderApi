@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Ardent.OrderApi.Functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7171",
+      "launchBrowser": false
+    }
+  }
+}

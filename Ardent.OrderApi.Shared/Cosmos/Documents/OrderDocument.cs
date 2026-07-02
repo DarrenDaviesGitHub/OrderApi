@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 
-namespace Ardent.Infrastructure.Cosmos.Documents;
+namespace Ardent.OrderApi.Shared.Cosmos.Documents;
 
 public class OrderDocument
 {
-    [JsonProperty(PropertyName="id")]
+    [JsonProperty(PropertyName = "id")]
     public Guid Id { get; set; }
 
     [JsonProperty(PropertyName = "customerId")]
