@@ -1,10 +1,10 @@
-﻿using Ardent.Domain.Models;
-using Ardent.Infrastructure.Cosmos.Mappings;
+﻿using Ardent.OrderApi.Domain.Models;
+using Ardent.OrderApi.Infrastructure.Cosmos.Mappings;
 using Ardent.OrderApi.Shared.Cosmos.Documents;
 using AutoFixture;
 using FluentAssertions;
 
-namespace Ardent.Infrastructure.UnitTest.Cosmos.Mappings;
+namespace Ardent.OrderApi.Infrastructure.UnitTest.Cosmos.Mappings;
 
 public class OrderMapperTests
 {

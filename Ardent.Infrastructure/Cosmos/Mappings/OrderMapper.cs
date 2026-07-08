@@ -1,7 +1,7 @@
-﻿using Ardent.Domain.Models;
+﻿using Ardent.OrderApi.Domain.Models;
 using Ardent.OrderApi.Shared.Cosmos.Documents;
 
-namespace Ardent.Infrastructure.Cosmos.Mappings;
+namespace Ardent.OrderApi.Infrastructure.Cosmos.Mappings;
 
 public class OrderMapper
 {

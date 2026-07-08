@@ -1,6 +1,6 @@
-﻿using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.OrderApi.Application.DomainTransferObjects;
+﻿using Ardent.OrderApi.Application.DomainTransferObjects;
 using Ardent.OrderApi.Application.Queries;
+using Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
 using AutoMapper;
 using MediatR;
 

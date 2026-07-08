@@ -1,8 +1,8 @@
-﻿using Ardent.Domain.Models;
-using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.OrderApi.Application.Commands;
+﻿using Ardent.OrderApi.Application.Commands;
 using Ardent.OrderApi.Application.DomainTransferObjects;
 using Ardent.OrderApi.Application.Handlers;
+using Ardent.OrderApi.Domain.Models;
+using Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
 using AutoFixture;
 using FluentAssertions;
 using Moq;

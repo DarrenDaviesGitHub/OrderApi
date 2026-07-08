@@ -1,5 +1,5 @@
-﻿using Ardent.Domain.Models;
-using Ardent.OrderApi.Application.DomainTransferObjects;
+﻿using Ardent.OrderApi.Application.DomainTransferObjects;
+using Ardent.OrderApi.Domain.Models;
 using AutoMapper;
 
 namespace Ardent.OrderApi.Application.MappingProfiles;

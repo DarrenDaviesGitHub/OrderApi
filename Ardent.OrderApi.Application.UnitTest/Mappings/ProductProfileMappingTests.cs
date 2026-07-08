@@ -1,7 +1,7 @@
-﻿using Ardent.Domain.Models;
-using Ardent.OrderApi.Application.DomainTransferObjects;
+﻿using Ardent.OrderApi.Application.DomainTransferObjects;
 using Ardent.OrderApi.Application.MappingProfiles;
 using Ardent.OrderApi.Application.UnitTest.Helpers;
+using Ardent.OrderApi.Domain.Models;
 using AutoFixture;
 using AutoMapper;
 using FluentAssertions;

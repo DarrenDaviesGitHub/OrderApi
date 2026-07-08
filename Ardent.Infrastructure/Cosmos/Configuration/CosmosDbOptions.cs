@@ -1,4 +1,4 @@
-﻿namespace Ardent.Infrastructure.Cosmos.Configuration;
+﻿namespace Ardent.OrderApi.Infrastructure.Cosmos.Configuration;
 
 public class CosmosDbOptions
 {

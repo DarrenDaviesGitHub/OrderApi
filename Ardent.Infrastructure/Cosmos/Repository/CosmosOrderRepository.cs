@@ -1,12 +1,12 @@
-﻿using Ardent.Domain.Models;
-using Ardent.Infrastructure.Cosmos.Configuration;
-using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.Infrastructure.Cosmos.Mappings;
+﻿using Ardent.OrderApi.Domain.Models;
+using Ardent.OrderApi.Infrastructure.Cosmos.Configuration;
+using Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
+using Ardent.OrderApi.Infrastructure.Cosmos.Mappings;
 using Ardent.OrderApi.Shared.Cosmos.Documents;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
 
-namespace Ardent.Infrastructure.Cosmos.Repository;
+namespace Ardent.OrderApi.Infrastructure.Cosmos.Repository;
 
 public class CosmosOrderRepository : ICosmosOrderRepository
 {

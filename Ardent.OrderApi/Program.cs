@@ -1,7 +1,7 @@
-using Ardent.Infrastructure.Cosmos.Configuration;
-using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.Infrastructure.Cosmos.Repository;
 using Ardent.OrderApi.Application;
+using Ardent.OrderApi.Infrastructure.Cosmos.Configuration;
+using Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
+using Ardent.OrderApi.Infrastructure.Cosmos.Repository;
 using Ardent.OrderApi.Middleware;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

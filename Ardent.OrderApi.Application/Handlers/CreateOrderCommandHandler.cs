@@ -1,6 +1,6 @@
-﻿using Ardent.Domain.Models;
-using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.OrderApi.Application.Commands;
+﻿using Ardent.OrderApi.Application.Commands;
+using Ardent.OrderApi.Domain.Models;
+using Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
 using MediatR;
 
 namespace Ardent.OrderApi.Application.Handlers;
