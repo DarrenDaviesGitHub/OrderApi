@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ardent.Infrastructure\Ardent.OrderApi.Infrastructure.csproj" />
     <ProjectReference Include="..\Ardent.OrderApi.Shared\Ardent.OrderApi.Shared.csproj" />
   </ItemGroup>
 
