@@ -1,6 +1,6 @@
 ﻿using Ardent.OrderApi.Domain.Models;
 using Ardent.OrderApi.Infrastructure.Cosmos.Configuration;
-using Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
+using Ardent.OrderApi.Application.Interfaces;
 using Ardent.OrderApi.Infrastructure.Cosmos.Mappings;
 using Ardent.OrderApi.Shared.Cosmos.Documents;
 using Microsoft.Azure.Cosmos;

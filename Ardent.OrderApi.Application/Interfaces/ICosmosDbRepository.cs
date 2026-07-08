@@ -1,6 +1,6 @@
 ﻿using Ardent.OrderApi.Domain.Models;
 
-namespace Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
+namespace Ardent.OrderApi.Application.Interfaces;
 
 public interface ICosmosOrderRepository
 {

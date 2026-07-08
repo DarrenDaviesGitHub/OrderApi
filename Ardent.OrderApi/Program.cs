@@ -1,6 +1,7 @@
 using Ardent.OrderApi.Application;
+using Ardent.OrderApi.Application.Interfaces;
+using Ardent.OrderApi.Application.MappingProfiles;
 using Ardent.OrderApi.Infrastructure.Cosmos.Configuration;
-using Ardent.OrderApi.Infrastructure.Cosmos.Interfaces;
 using Ardent.OrderApi.Infrastructure.Cosmos.Repository;
 using Ardent.OrderApi.Middleware;
 using AutoMapper;
@@ -14,7 +15,12 @@ var keycloakConfiguration = builder.Configuration.GetSection("Keycloak");
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApplicationAssemblyMarker).Assembly));
-builder.Services.AddAutoMapper(cfg => { });
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<OrderProfile>();
+    cfg.AddProfile<ProductProfile>();
+});
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {

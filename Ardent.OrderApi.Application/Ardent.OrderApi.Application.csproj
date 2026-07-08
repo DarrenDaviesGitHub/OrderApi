@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ardent.OrderApi.Domain\Ardent.OrderApi.Domain.csproj" />
-    <ProjectReference Include="..\Ardent.OrderApi.Infrastructure\Ardent.OrderApi.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
