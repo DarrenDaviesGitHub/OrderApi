@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
 
-namespace Ardent.OrderApi.UnitTest.Helpers;
+namespace Ardent.OrderApi.Application.UnitTest.Helpers;
 
 public static class MapperFactory
 {

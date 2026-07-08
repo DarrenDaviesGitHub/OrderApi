@@ -1,12 +1,12 @@
 ﻿using Ardent.Domain.Models;
-using Ardent.OrderApi.DomainTransferObjects;
-using Ardent.OrderApi.MappingProfiles;
-using Ardent.OrderApi.UnitTest.Helpers;
+using Ardent.OrderApi.Application.DomainTransferObjects;
+using Ardent.OrderApi.Application.MappingProfiles;
+using Ardent.OrderApi.Application.UnitTest.Helpers;
 using AutoFixture;
 using AutoMapper;
 using FluentAssertions;
 
-namespace Ardent.OrderApi.UnitTest.Mappings;
+namespace Ardent.OrderApi.Application.UnitTest.Mappings;
 
 public class OrderProfileMappingTests
 {
@@ -16,7 +16,7 @@ public class OrderProfileMappingTests
     public OrderProfileMappingTests()
     {
         var mapper = MapperFactory.Create(
-            new ProductProfile(), 
+            new ProductProfile(),
             new OrderProfile());
 
         _mapper = mapper.Mapper;

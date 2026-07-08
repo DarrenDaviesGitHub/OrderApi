@@ -1,16 +1,16 @@
 ﻿using Ardent.Domain.Models;
 using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.OrderApi.DomainTransferObjects;
-using Ardent.OrderApi.Handlers;
-using Ardent.OrderApi.MappingProfiles;
-using Ardent.OrderApi.Queries;
+using Ardent.OrderApi.Application.DomainTransferObjects;
+using Ardent.OrderApi.Application.Handlers;
+using Ardent.OrderApi.Application.MappingProfiles;
+using Ardent.OrderApi.Application.Queries;
 using AutoFixture;
 using AutoMapper;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
 
-namespace Ardent.OrderApi.UnitTest.Handlers;
+namespace Ardent.OrderApi.Application.UnitTest.Handlers;
 
 public class GetOrderQueryHandlerTests
 {

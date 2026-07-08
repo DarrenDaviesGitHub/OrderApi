@@ -1,8 +1,8 @@
-﻿using Ardent.OrderApi.MappingProfiles;
-using Ardent.OrderApi.UnitTest.Helpers;
+﻿using Ardent.OrderApi.Application.MappingProfiles;
+using Ardent.OrderApi.Application.UnitTest.Helpers;
 using AutoMapper;
 
-namespace Ardent.OrderApi.UnitTest.Mappings;
+namespace Ardent.OrderApi.Application.UnitTest.Mappings;
 
 public class ProfileConfiguration
 {
@@ -11,7 +11,7 @@ public class ProfileConfiguration
     public ProfileConfiguration()
     {
         var mapper = MapperFactory.Create(
-            new ProductProfile(), 
+            new ProductProfile(),
             new OrderProfile());
 
         _configuration = mapper.Configuration;

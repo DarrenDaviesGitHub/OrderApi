@@ -1,13 +1,13 @@
 ﻿using Ardent.Domain.Models;
 using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.OrderApi.Commands;
-using Ardent.OrderApi.DomainTransferObjects;
-using Ardent.OrderApi.Handlers;
+using Ardent.OrderApi.Application.Commands;
+using Ardent.OrderApi.Application.DomainTransferObjects;
+using Ardent.OrderApi.Application.Handlers;
 using AutoFixture;
 using FluentAssertions;
 using Moq;
 
-namespace Ardent.OrderApi.UnitTest.Handlers;
+namespace Ardent.OrderApi.Application.UnitTest.Handlers;
 
 public class CreateOrderCommandHandlerTests
 {

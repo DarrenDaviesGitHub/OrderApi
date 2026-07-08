@@ -1,4 +1,4 @@
-﻿namespace Ardent.OrderApi.DomainTransferObjects;
+﻿namespace Ardent.OrderApi.Application.DomainTransferObjects;
 
 public class OrderDto
 {

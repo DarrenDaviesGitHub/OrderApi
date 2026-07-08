@@ -1,12 +1,12 @@
 ﻿using Ardent.Domain.Models;
 using Ardent.Infrastructure.Cosmos.Interfaces;
-using Ardent.OrderApi.Commands;
+using Ardent.OrderApi.Application.Commands;
 using MediatR;
 
-namespace Ardent.OrderApi.Handlers;
+namespace Ardent.OrderApi.Application.Handlers;
 
 public class CreateOrderCommandHandler(
-    ICosmosOrderRepository cosmosOrderRepository) 
+    ICosmosOrderRepository cosmosOrderRepository)
     : IRequestHandler<CreateOrderCommand>
 {
     public async Task Handle(
@@ -30,4 +30,3 @@ public class CreateOrderCommandHandler(
            command.order.Products.Sum(p => p.Price),
            DateTime.UtcNow);
 }
-  

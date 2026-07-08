@@ -2,6 +2,8 @@
   <Project Path="Ardent.Domain/Ardent.Domain.csproj" Id="9ca7d8be-8e14-4633-8e61-13fefdd61146" />
   <Project Path="Ardent.Infrastructure.Test/Ardent.Infrastructure.UnitTest.csproj" Id="37e4b860-e1ea-4411-8448-8b4b2ab9f168" />
   <Project Path="Ardent.Infrastructure/Ardent.Infrastructure.csproj" Id="0701ca62-ea52-4519-8b17-9c4ab949050c" />
+  <Project Path="Ardent.OrderApi.Application.UnitTest/Ardent.OrderApi.Application.UnitTest.csproj" Id="8bc71d86-7f75-4e6a-ac69-e8bf296f3098" />
+  <Project Path="Ardent.OrderApi.Application/Ardent.OrderApi.Application.csproj" Id="6552716c-10af-4d34-98d6-d67a5114c72a" />
   <Project Path="Ardent.OrderApi.Functions/Ardent.OrderApi.Functions.csproj" Id="2bd682e4-0f80-45da-a218-649b1487e57b" />
   <Project Path="Ardent.OrderApi.Shared/Ardent.OrderApi.Shared.csproj" Id="58256499-22d1-4bb4-8630-e7fdd87573cb" />
   <Project Path="Ardent.OrderApi.UnitTest/Ardent.OrderApi.UnitTest.csproj" Id="3dcdea60-b8d8-4762-bc10-b8541543ec9b" />

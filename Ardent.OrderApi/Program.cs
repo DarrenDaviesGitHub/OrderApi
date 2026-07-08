@@ -1,6 +1,7 @@
 using Ardent.Infrastructure.Cosmos.Configuration;
 using Ardent.Infrastructure.Cosmos.Interfaces;
 using Ardent.Infrastructure.Cosmos.Repository;
+using Ardent.OrderApi.Application;
 using Ardent.OrderApi.Middleware;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,7 +13,7 @@ var keycloakConfiguration = builder.Configuration.GetSection("Keycloak");
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApplicationAssemblyMarker).Assembly));
 builder.Services.AddAutoMapper(cfg => { });
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

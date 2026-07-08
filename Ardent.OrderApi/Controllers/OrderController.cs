@@ -1,6 +1,6 @@
-﻿using Ardent.OrderApi.Commands;
-using Ardent.OrderApi.DomainTransferObjects;
-using Ardent.OrderApi.Queries;
+﻿using Ardent.OrderApi.Application.Commands;
+using Ardent.OrderApi.Application.DomainTransferObjects;
+using Ardent.OrderApi.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

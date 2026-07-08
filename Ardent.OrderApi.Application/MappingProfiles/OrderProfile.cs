@@ -1,8 +1,8 @@
 ﻿using Ardent.Domain.Models;
-using Ardent.OrderApi.DomainTransferObjects;
+using Ardent.OrderApi.Application.DomainTransferObjects;
 using AutoMapper;
 
-namespace Ardent.OrderApi.MappingProfiles;
+namespace Ardent.OrderApi.Application.MappingProfiles;
 
 public class OrderProfile : Profile
 {

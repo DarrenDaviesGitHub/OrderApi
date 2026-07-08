@@ -1,7 +1,7 @@
-﻿using Ardent.OrderApi.Commands;
+﻿using Ardent.OrderApi.Application.Commands;
+using Ardent.OrderApi.Application.DomainTransferObjects;
+using Ardent.OrderApi.Application.Queries;
 using Ardent.OrderApi.Controllers;
-using Ardent.OrderApi.DomainTransferObjects;
-using Ardent.OrderApi.Queries;
 using AutoFixture;
 using FluentAssertions;
 using MediatR;
