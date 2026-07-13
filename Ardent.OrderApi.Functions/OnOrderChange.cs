@@ -19,7 +19,7 @@ public class OnOrderChange(ILogger<OnOrderChange> logger)
     {
         if (input is { Count: > 0 })
         {
-            logger.LogInformation("Documents modified: " + input.Count);
+            logger.LogInformation("Documents modified: {Count}", input.Count);
 
             foreach (var inputItem in input)
             {
