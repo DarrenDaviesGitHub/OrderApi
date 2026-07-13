@@ -17,16 +17,16 @@ public class OnOrderChange(ILogger<OnOrderChange> logger)
 
     private void ProcessChangedItems(IReadOnlyList<OrderDocument> input)
     {
-        if (input is not null && input.Count > 0)
+        if (input is { Count: > 0 })
         {
             logger.LogInformation("Documents modified: " + input.Count);
 
             foreach (var inputItem in input)
             {
-                logger.LogInformation($"Document Id: {inputItem.Id}");
-                logger.LogInformation($"Customer Id: {inputItem.CustomerId}");
-                logger.LogInformation($"Total Amount: {inputItem.TotalAmount}");
-                logger.LogInformation($"Order Date: {inputItem.OrderDate}");
+                logger.LogInformation("Document Id: {DocumentId}", inputItem.Id);
+                logger.LogInformation("Customer Id: {CustomerId}", inputItem.CustomerId);
+                logger.LogInformation("Total Amount: {TotalAmount}", inputItem.TotalAmount);
+                logger.LogInformation("Order Date: {OrderDate}", inputItem.OrderDate);
             }
         }
     }
