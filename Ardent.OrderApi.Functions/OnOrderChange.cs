@@ -15,18 +15,18 @@ public class OnOrderChange(ILogger<OnOrderChange> logger)
         CreateLeaseContainerIfNotExists = true)] IReadOnlyList<OrderDocument> input)
         => ProcessChangedItems(input);
 
-    private void ProcessChangedItems(IReadOnlyList<OrderDocument> input)
+    private void ProcessChangedItems(IReadOnlyList<OrderDocument> orders)
     {
-        if (input is { Count: > 0 })
+        if (orders is { Count: > 0 })
         {
-            logger.LogInformation("Documents modified: {Count}", input.Count);
+            logger.LogInformation("Order documents modified: {Count}", orders.Count);
 
-            foreach (var inputItem in input)
+            foreach (var order in orders)
             {
-                logger.LogInformation("Document Id: {DocumentId}", inputItem.Id);
-                logger.LogInformation("Customer Id: {CustomerId}", inputItem.CustomerId);
-                logger.LogInformation("Total Amount: {TotalAmount}", inputItem.TotalAmount);
-                logger.LogInformation("Order Date: {OrderDate}", inputItem.OrderDate);
+                logger.LogInformation("Order Id: {DocumentId}", order.Id);
+                logger.LogInformation("Customer Id: {CustomerId}", order.CustomerId);
+                logger.LogInformation("Total Amount: {TotalAmount}", order.TotalAmount);
+                logger.LogInformation("Order Date: {OrderDate}", order.OrderDate);
             }
         }
     }
