@@ -6,4 +6,5 @@ public interface ICosmosOrderRepository
 {
     public Task CreateOrderAsync(Order order, CancellationToken cancellationToken);
     public Task<Order?> GetOrderAsync(Guid orderId, Guid customerId, CancellationToken cancellationToken);
+    public Task<IReadOnlyList<Order>> GetCustomerOrdersAsync(Guid customerId, CancellationToken cancellationToken);
 }

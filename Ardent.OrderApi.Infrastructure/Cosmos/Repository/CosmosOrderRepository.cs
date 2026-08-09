@@ -30,6 +30,7 @@ public class CosmosOrderRepository : ICosmosOrderRepository
             cancellationToken: cancellationToken);
     }
 
+    // Point Read
     public async Task<Order?> GetOrderAsync(
         Guid orderId, 
         Guid customerId,
@@ -49,5 +50,39 @@ public class CosmosOrderRepository : ICosmosOrderRepository
         {
             return null;
         }
+    }
+
+    // Query Read
+    public async Task<IReadOnlyList<Order>> GetCustomerOrdersAsync(
+        Guid customerId,
+        CancellationToken cancellationToken)
+    {
+        List<Order> orders = [];
+
+        var query = new QueryDefinition(
+            """
+            SELECT *
+            FROM c
+            WHERE c.customerId = @customerId
+            """)
+            .WithParameter("@customerId", customerId);
+
+        var requestOptions = new QueryRequestOptions
+        {
+            PartitionKey = new PartitionKey(customerId.ToString())
+        };
+
+        using var iterator = _container.GetItemQueryIterator<OrderDocument>(
+            query, 
+            requestOptions: requestOptions);
+
+        while (iterator.HasMoreResults)
+        {
+            var response = await iterator.ReadNextAsync(cancellationToken);
+
+            orders.AddRange(response.Select(OrderMapper.ToDomain));
+        }
+
+        return orders;
     }
 }
