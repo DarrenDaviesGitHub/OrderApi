@@ -61,7 +61,12 @@ public class CosmosOrderRepository : ICosmosOrderRepository
 
         var query = new QueryDefinition(
             """
-            SELECT *
+            SELECT 
+                c.id,
+                c.customerId,
+                c.products,
+                c.totalAmount,
+                c.orderDate
             FROM c
             WHERE c.customerId = @customerId
             """)
