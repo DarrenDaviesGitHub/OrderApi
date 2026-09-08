@@ -31,3 +31,13 @@ https://ardentwebapiorders-fwhbcedxc2fnfhaj.eastus-01.azurewebsites.net/api/orde
 ```
 
 ![CosmosDBIntegration](CosmosDBRunning.png)
+
+## Claude Desktop and Order MCP Server Integration
+
+Customer service representative retrieving and creating new customers order via Claude Desktop interface and Order MCP Server.
+
+<img width="910" height="947" alt="image" src="https://github.com/user-attachments/assets/62f9eb05-d61e-4189-ba03-568377267f50" />
+
+Order creation over MCP verified within Cosmos DB
+
+<img width="1204" height="253" alt="image" src="https://github.com/user-attachments/assets/3bbec4bd-3984-42d5-aedc-5bf98f979afd" />
