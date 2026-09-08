@@ -64,9 +64,9 @@ public class CosmosOrderRepository : ICosmosOrderRepository
             SELECT 
                 c.id,
                 c.customerId,
-                c.products,
-                c.totalAmount,
-                c.orderDate
+                c.Products,
+                c.TotalAmount,
+                c.OrderDate
             FROM c
             WHERE c.customerId = @customerId
             """)
