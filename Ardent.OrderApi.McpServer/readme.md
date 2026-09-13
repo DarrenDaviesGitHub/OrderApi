@@ -4,8 +4,8 @@ A remotely hosted [Model Context Protocol](https://modelcontextprotocol.io/) ser
 Order API to MCP clients (Claude Desktop, Claude Code, and anything else that speaks MCP).
 
 It reuses the same clean-architecture layers as the REST API — MediatR requests against
-`Ardent.OrderApi.Application`, backed by the Cosmos repository — so tools and HTTP endpoints
-never drift apart.
+`Ardent.OrderApi.Application`, backed by the Cosmos repository to keep MCP tools and HTTP endpoints
+aligned.
 
 ## Transport
 
@@ -66,7 +66,7 @@ claude mcp add --transport http ardent-orders https://<your-host>/mcp \
 ### Claude Desktop
 
 Settings → Connectors → Add custom connector → paste `https://<your-host>/mcp`.
-Custom connectors require a public HTTPS URL; if the server has authorization enabled, Desktop
+Custom connectors require a public HTTPS URL. If the server has authorization enabled, Desktop
 runs the OAuth flow discovered from the protected resource metadata.
 
 For a local server (no public URL), point Desktop at it through the stdio bridge in
